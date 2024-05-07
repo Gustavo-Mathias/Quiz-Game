@@ -34,21 +34,35 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: center
 }
 
 .nav-links li {
   display: inline;
+  margin-left: 20px;
+}
+
+
+.nav-links li:first-child {
+  margin-left: 0;
 }
 
 .nav-links li a {
   color: #ffffff;
   text-decoration: none;
-  margin-left: 20px;
   font-size: 18px;
 }
 
 .nav-links li a:hover {
   text-decoration: underline;
+}
+
+.menu-toggle-btn {
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 20px;
+  display: none;
 }
 
 .container {
@@ -106,4 +120,28 @@ button:hover {
   text-align: center;
   margin: 30px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+  }
+
+  .navbar {
+      justify-content: flex-end;
+  }
+
+  .menu-toggle-btn {
+      display: block;
+  }
+
+  .menu-toggle-btn:hover {
+      text-decoration: underline;
+  }
+
+  .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
 }
